@@ -1,0 +1,345 @@
+/* Base styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f3f4f6;
+    color: #1f2937;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    header .container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+/* Navigation styles */
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+@media (min-width: 768px) {
+    nav ul {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4b5563;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: color 0.2s, background 0.2s;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link.nav-active {
+    color: #4f46e5;
+    background: #eef2ff;
+}
+
+/* Hero section */
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    #home {
+        min-height: 50vh;
+    }
+}
+
+/* Subscription form */
+#subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto 0 auto;
+}
+
+@media (min-width: 640px) {
+    #subscribe-form {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+#subscribe-form input[type="email"] {
+    flex: 1 1 0%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+#subscribe-form input[type="email"]:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px #6366f1;
+}
+
+#subscribe-form button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.375rem;
+    background: #6366f1;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#subscribe-form button:hover {
+    background: #4338ca;
+}
+
+/* About section */
+#about {
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+
+#about .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    #about .flex {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+#about img {
+    border-radius: 9999px;
+    border: 4px solid #c7d2fe;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+#about img:hover {
+    transform: scale(1.05);
+}
+
+/* Skills grid */
+#skills .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    #skills .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1024px) {
+    #skills .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+#skills .group {
+    background: #f9fafb;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    padding: 1.5rem;
+    transition: box-shadow 0.3s;
+}
+
+#skills .group:hover {
+    box-shadow: 0 4px 16px rgba(99,102,241,0.08);
+}
+
+#skills h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4f46e5;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s;
+}
+
+#skills .group:hover h3 {
+    color: #3730a3;
+}
+
+/* Projects grid */
+#projects .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    #projects .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1024px) {
+    #projects .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+#projects .group {
+    background: #f9fafb;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+#projects .group:hover {
+    box-shadow: 0 4px 16px rgba(99,102,241,0.08);
+}
+
+#projects img {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+#projects .group:hover img {
+    transform: scale(1.05);
+}
+
+/* Contact form */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contact-form .relative {
+    position: relative;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px #6366f1;
+}
+
+#contact-form button {
+    background: #4f46e5;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#contact-form button:hover {
+    background: #3730a3;
+}
+
+/* Footer styles */
+footer {
+    background: #1f2937;
+    color: #fff;
+    padding: 2rem 1rem 1rem 1rem;
+    margin-top: 2rem;
+}
+
+footer .flex {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: #fff;
+    transition: color 0.2s;
+    font-size: 1.25rem;
+}
+
+footer a:hover {
+    color: #818cf8;
+}
+
+/* Utility classes for fade-in animation */
+.animate-fade-in {
+    animation: fadeIn 1s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
